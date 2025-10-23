@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home Page - My Cozy Corner</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="CSS/styles.css" />
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<body>
+    <main class="about-me-section">
+        <div class="container">
+            <!-- 1. Professional Headshot -->
+            <section class="profile-section" aria-label="Profile Photo and Introduction">
+                <img src="images/me.jpg" alt="Professional headshot of [Your Name]" class="profile-image" />
+                
+                <!-- 2. Welcome Section -->
+                <h1 class="welcome-title">Hello, I'm Merlin </h1>
+                <p class="subtitle">
+                    I'm currently studying Finance at University of Minnesota Duluth <br/>
+                     and Im excited to share my journey with you.
+                </p>
+            </section>
+
+            <!-- 3. Welcome Video -->
+            <section class="welcome-video" aria-label="Welcome Video">
+                <video controls width="100%" max-width="600" preload="metadata" poster="images/video-poster.jpg">
+                    <source src="videos/welcome.mp4" type="video/mp4" />
+                    Sorry, your browser doesn't support embedded videos.
+                </video>
+                <p style="margin-top: 0.5rem; font-style: italic; color: var(--warm-brown);">
+                    Watch this quick intro to learn more about me and what you can explore on my site!
+                </p>
+            </section>
+
+            <!-- 4. Two Hobby Summaries -->
+            <section class="hobby-summaries" aria-label="Hobby Summaries" style="margin-top: 3rem;">
+                <h2 style="text-align:center; font-family: 'Playfair Display', serif; margin-bottom: 1.5rem;">
+                    A Couple of My Favorite Hobbies
+                </h2>
+
+                <div class="hobby-container" style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
+                    <!-- Hobby 1 -->
+                    <article class="hobby" style="max-width: 350px; background: var(--cream); border-radius: 15px; box-shadow: 0 4px 12px rgba(161,124,107,0.1); padding: 1rem;">
+                        <img src="images/litta.jpg" alt="[Hobby 1 Name]" style="width:100%; border-radius: 15px 15px 0 0; object-fit: cover; height: 200px;" />
+                        <h3 style="margin-top: 1rem; color: var(--warm-brown); font-family: 'Playfair Display', serif;">
+                            Spending time with family/friends
+                        </h3>
+                        <p style="color: var(--warm-brown); font-size: 1rem; margin-bottom: 1rem;">
+                            Spending time with families and friends has something I have always loved. Especially when it comes to my childhood friends and families who live miles away from America. When I get the opportunity to go visit them, I love to make my moments count with them.
+
+                        </p>
+                        <a href="about.html#hobby1" class="cute-button" style="display: inline-block;">Learn More</a>
+                    </article>
+
+                    <!-- Hobby 2 -->
+                    <article class="hobby" style="max-width: 350px; background: var(--cream); border-radius: 15px; box-shadow: 0 4px 12px rgba(161,124,107,0.1); padding: 1rem;">
+                        <img src="images/hobby2.jpg" alt="[Hobby 2 Name]" style="width:100%; border-radius: 15px 15px 0 0; object-fit: cover; height: 200px;" />
+                        <h3 style="margin-top: 1rem; color: var(--warm-brown); font-family: 'Playfair Display', serif;">
+                            Baking
+                        </h3>
+                        <p style="color: var(--warm-brown); font-size: 1rem; margin-bottom: 1rem;">
+                            Baking is something I always loved doing. Ever since I was 4 I always loved to bake and make treats for family and friends. Over time it slowly became something I would do when I want to have a relaxed day
+                        </p>
+                        <a href="about.html#hobby2" class="cute-button" style="display: inline-block;">Learn More</a>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Navigation -->
+            <nav class="navigation-tabs" aria-label="Main Navigation" style="margin-top: 3rem;">
+                <a href="index.html" class="nav-tab active-nav">Home</a>
+                <a href="about.html" class="nav-tab">Hobbies</a>
+                <a href="discover.html" class="nav-tab">Discover</a>
+                <a href="resume.html" class="nav-tab">Resume</a>
+                <a href="career.html" class="nav-tab">Career</a>
+                <a href="game.html" class="nav-tab">Game</a>
+            </nav>
+
+            <!-- Buttons -->
+            <div class="buttons" style="margin-top: 2rem; text-align: center;">
+                <a href="about.html" class="cute-button">Explore My Hobbies</a>
+                <a href="contact.html" class="cute-button">Contact Me</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- JS for interactions -->
+    <script>
+        const buttons = document.querySelectorAll('.cute-button');
+        buttons.forEach(button => {
+            button.addEventListener('mouseenter', () => {
+                button.style.transform = 'translateY(-3px)';
+                button.style.transition = 'transform 0.3s ease';
+            });
+            button.addEventListener('mouseleave', () => {
+                button.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>

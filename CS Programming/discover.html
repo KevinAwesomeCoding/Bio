@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Discover UMD & Duluth</title>
+    <link rel="stylesheet" href="CSS/styles.css" />
+    <link rel="stylesheet" href="CSS/styles-discover.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="page-header">
+        <nav class="main-nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="discover.html" class="nav-link active">Discover UMD</a>
+            <a href="resume.html" class="nav-link">Resume</a>
+            <a href="career.html" class="nav-link">Career</a>
+            <a href="game.html" class="nav-link">Game</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="discover-hero">
+        <div class="hero-content">
+            <h1>Discover UMD & Duluth</h1>
+            <p>Where Lake Superior meets inspiration ✨</p>
+        </div>
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+    </section>
+
+      <!-- Why I Chose UMD -->
+      <section class="discover-section fade-up">
+        <h2 class="section-title">Why I Chose UMD</h2>
+        <p class="section-text">
+          I chose the <strong>University of Minnesota Duluth</strong> because it’s the perfect blend of strong academics, a supportive community, and breathtaking surroundings.
+          From the moment I visited, I felt connected to the peaceful energy of the campus and the kindness of the people here.
+          UMD offers an environment where learning feels both challenging and comforting — a space that truly feels like home.
+        </p>
+        <ul class="interests-list">
+          <li class="interest-tag">Beautiful Campus</li>
+          <li class="interest-tag">Close Community</li>
+          <li class="interest-tag">Strong Academics</li>
+          <li class="interest-tag">Lakeside Serenity</li>
+          <li class="interest-tag">Welcoming Atmosphere</li>
+        </ul>
+      </section>
+
+      <!-- What I Love About Duluth -->
+      <section class="discover-section fade-up">
+        <h2 class="section-title">What I Love About Duluth</h2>
+        <p class="section-text">
+          Duluth is one of those rare places where nature, creativity, and warmth come together.
+          I love the views of <strong>Lake Superior</strong>, the vibrant local coffee shops, and the friendly spirit that flows through the city.
+          Whether it’s walking the Lakewalk or hiking at Enger Tower, Duluth reminds me to slow down and appreciate life’s beauty.
+        </p>
+
+        <div class="duluth-gallery">
+          <img src="images/lakewalk.jpg" alt="Duluth Lakewalk" />
+          <img src="images/aerial-lift-bridge.jpg" alt="Aerial Lift Bridge" />
+          <img src="images/enger-tower.jpg" alt="Enger Tower" />
+        </div>
+      </section>
+
+      <!-- UMD Marketing Video -->
+      <section class="discover-section fade-up">
+        <h2 class="section-title">30-Second UMD Marketing Video</h2>
+        <p class="section-text">
+          Our team created a short video that captures what makes UMD so special — the campus, the people, and the experiences that make this place unforgettable.
+        </p>
+        <div class="video-container">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/YourVideoLinkHere" 
+            title="UMD Marketing Video" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </section>
+
+      <!-- Campus Experiences -->
+      <section class="discover-section fade-up">
+        <h2 class="section-title">Campus Experiences</h2>
+        <p class="section-text">
+          My journey at UMD has been filled with memorable moments — late-night study sessions at the Library, laughter in Kirby Student Center, and quiet reflection by the lake.
+          These experiences have shaped who I am and made Duluth not just a college town, but a second home.
+        </p>
+
+        <table class="about-table">
+          <thead>
+            <tr>
+              <th>Favorite Spot</th>
+              <th>Why I Love It</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Kirby Student Center</td>
+              <td>It’s the heart of student life — vibrant, welcoming, and full of energy.</td>
+            </tr>
+            <tr>
+              <td>Bagley Nature Area</td>
+              <td>A peaceful retreat surrounded by trees and trails, perfect for reflection.</td>
+            </tr>
+            <tr>
+              <td>UMD Library</td>
+              <td>Quiet corners, warm lighting, and a sense of calm that makes studying enjoyable.</td>
+            </tr>
+            <tr>
+              <td>Lakewalk</td>
+              <td>Sunsets by the lake make everything feel possible again.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Back to Top -->
+      <div class="buttons fade-up">
+        <a href="#top" class="cute-button">Back to Top</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Optional soft fade JS -->
+  <script>
+    const fadeEls = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    fadeEls.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

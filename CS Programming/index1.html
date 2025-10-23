@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome | Interactive Homepage</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e5c0ed;
+            --text-color: #07090a;
+            --background: #be91c6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: var(--background);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(135deg, #6c5ce7, #a8e6cf);
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            transform: translateY(0);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: titleGradient 8s ease infinite;
+        }
+
+        @keyframes titleGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .welcome-text {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: white;
+            background: var(--accent-color);
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+            margin: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
+        }
+
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0;
+            transition: transform 0.6s, opacity 0.3s;
+        }
+
+        .cta-button:active::after {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            cursor: pointer;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .welcome-text { font-size: 1.2rem; }
+            .features { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Welcome to My World</h1>
+            <p class="welcome-text">Discover amazing experiences and creative ideas</p>
+            <div class="cta-section">
+                <a href="#" class="cta-button" id="exploreBtn">Explore More</a>
+                <a href="#" class="cta-button" id="contactBtn">Get in Touch</a>
+            </div>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>Innovation</h3>
+                    <p>Pushing boundaries with creative solutions</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Excellence</h3>
+                    <p>Delivering quality in every detail</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Vision</h3>
+                    <p>Shaping the future of technology</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Interactive elements
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const ripple = document.createElement('div');
+                ripple.classList.add('ripple');
+                button.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 1000);
+            });
+        });
+
+        // Dynamic color scheme based on time of day
+        function updateColorScheme() {
+            const hour = new Date().getHours();
+            const root = document.documentElement;
+            
+            if (hour >= 6 && hour < 12) { // Morning
+                root.style.setProperty('--background', '#e8f3f7');
+                root.style.setProperty('--accent-color', '#ff7e67');
+            } else if (hour >= 12 && hour < 18) { // Afternoon
+                root.style.setProperty('--background', '#ecf0f1');
+                root.style.setProperty('--accent-color', '#3498db');
+            } else { // Evening/Night
+                root.style.setProperty('--background', '#2c3e50');
+                root.style.setProperty('--text-color', '#ecf0f1');
+                root.style.setProperty('--accent-color', '#a8e6cf');
+            }
+        }
+
+        updateColorScheme();
+        setInterval(updateColorScheme, 1000 * 60 * 30); // Update every 30 minutes
+
+        // Feature card interactions
+        document.querySelectorAll('.feature-card').forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.2}s`;
+            
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px) scale(1.05)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Welcome message typing effect
+        const welcomeText = document.querySelector('.welcome-text');
+        const text = welcomeText.textContent;
+        welcomeText.textContent = '';
+        let i = 0;
+
+        function typeWriter() {
+            if (i < text.length) {
+                welcomeText.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 50);
+            }
+        }
+
+        // Start typing effect when page loads
+        window.addEventListener('load', typeWriter);
+    </script>
+</body>
+</html>

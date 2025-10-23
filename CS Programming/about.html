@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>About Me - My Journey & Hobbies</title>
+    <link rel="stylesheet" href="CSS/styles.css" />
+    <link rel="stylesheet" href="CSS/styles-about.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="page-header">
+        <nav class="main-nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link active">About</a>
+            <a href="discover.html" class="nav-link">Discover</a>
+            <a href="resume.html" class="nav-link">Resume</a>
+            <a href="career.html" class="nav-link">Career</a>
+            <a href="game.html" class="nav-link">Game</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="profile-container">
+                <div class="profile-frame">
+                    <img src="images/profile.jpg" alt="Profile picture" class="profile-image">
+                </div>
+            </div>
+            <h1 class="hero-title">My Journey & Hobbies</h1>
+            <p class="hero-subtitle">Exploring Creativity, Technology, and Personal Growth</p>
+        </div>
+    </section>
+
+    <!-- Hobbies Grid Section -->
+    <section class="hobbies-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>What I Love To Do</h2>
+                <div class="filter-controls">
+                    <select id="hobby-filter" class="filter-select">
+                        <option value="all">All Categories</option>
+                        <option value="creative">Creative</option>
+                        <option value="tech">Technology</option>
+                        <option value="outdoor">Outdoor</option>
+                        <option value="social">Social</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="hobbies-grid">
+                <!-- Technology Card -->
+                <article class="hobby-card" data-category="tech">
+                    <div class="card-header">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>Programming</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Building web applications and exploring new technologies. Currently focused on full-stack development.</p>
+                        <div class="skill-meter">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                        <span class="time-spent">8+ hours weekly</span>
+                    </div>
+                </article>
+
+                <!-- Creative Card -->
+                <article class="hobby-card" data-category="creative">
+                    <div class="card-header">
+                        <i class="fas fa-paint-brush"></i>
+                        <h3>Digital Art</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Creating digital illustrations and designs. Love experimenting with different styles and techniques.</p>
+                        <div class="skill-meter">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                        <span class="time-spent">6 hours weekly</span>
+                    </div>
+                </article>
+
+                <!-- Outdoor Card -->
+                <article class="hobby-card" data-category="outdoor">
+                    <div class="card-header">
+                        <i class="fas fa-hiking"></i>
+                        <h3>Hiking</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Exploring nature trails and capturing beautiful landscapes through photography.</p>
+                        <div class="skill-meter">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                        <span class="time-spent">4 hours weekly</span>
+                    </div>
+                </article>
+
+                <!-- Social Card -->
+                <article class="hobby-card" data-category="social">
+                    <div class="card-header">
+                        <i class="fas fa-book-reader"></i>
+                        <h3>Book Club</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Leading discussions in our local book club. Currently reading contemporary fiction.</p>
+                        <div class="skill-meter">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                        <span class="time-spent">3 hours weekly</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+        <div class="container">
+            <h2>My Journey Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>2023</h3>
+                        <p>Started learning web development</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>2024</h3>
+                        <p>Completed first major project</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>2025</h3>
+                        <p>Currently exploring new technologies</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Filter functionality
+        const filter = document.getElementById('hobby-filter');
+        const cards = document.querySelectorAll('.hobby-card');
+
+        filter.addEventListener('change', (e) => {
+            const category = e.target.value;
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.hobby-card, .timeline-item').forEach(el => observer.observe(el));
+    </script>
+
+        <article class="hobby-card" data-category="outdoor" tabindex="0" aria-labelledby="hobby-photo-title">
+          <div class="hobby-media" role="img" aria-label="Camera image" style="background-image:url('images/photo-thumb.jpg')"></div>
+          <div class="hobby-body">
+            <h3 id="hobby-photo-title">Photography</h3>
+            <p class="hobby-desc">Street and nature photography — chasing good light, making simple moments feel cinematic.</p>
+
+            <div class="hobby-meta">
+              <div class="skill">
+                <span class="skill-label">Proficiency</span>
+                <div class="skill-bar" aria-hidden="true"><div class="skill-fill" style="width:60%"></div></div>
+                <span class="skill-percent">60%</span>
+              </div>
+              <div class="hobby-actions">
+                <button class="view-gallery-btn" data-images='["images/photo1.jpg","images/photo2.jpg","images/photo3.jpg"]'>Open Gallery</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Add more cards as needed -->
+      </section>
+
+      <!-- Soft profile / old table preserved but simplified for SEO & fallback -->
+      <table class="about-table visually-hidden" aria-hidden="false">
+        <tr><th colspan="2">Quick Info</th></tr>
+        <tr><td><i class="fas fa-user about-icon"></i>Name</td><td>[Your Name]</td></tr>
+        <tr><td><i class="fas fa-heart about-icon"></i>Interests</td><td>Art, Reading, Music, Photography, Programming</td></tr>
+      </table>
+
+      <div class="buttons" style="text-align:center; margin-top:2rem;">
+        <a href="index.html" class="cute-button">Back to Home</a>
+        <a href="contact.html" class="cute-button">Contact Me</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gallery Modal -->
+  <div id="gallery-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image gallery">
+    <button id="modal-close" class="modal-close" aria-label="Close gallery">&times;</button>
+    <div class="modal-inner">
+      <button id="modal-prev" class="modal-nav" aria-label="Previous image">&#8249;</button>
+      <img id="modal-image" src="" alt="Gallery image">
+      <button id="modal-next" class="modal-nav" aria-label="Next image">&#8250;</button>
+    </div>
+  </div>
+
+  <script>
+    // --- Filter + Shuffle ---
+    (function(){
+      const filter = document.getElementById('hobby-filter');
+      const shuffleBtn = document.getElementById('shuffle-btn');
+      const grid = document.querySelector('.hobby-grid');
+
+      filter.addEventListener('change', (e) => {
+        const val = e.target.value;
+        document.querySelectorAll('.hobby-card').forEach(card => {
+          const cat = card.dataset.category;
+          if (val === 'all' || val === cat) {
+            card.style.display = '';
+            card.setAttribute('aria-hidden', 'false');
+          } else {
+            card.style.display = 'none';
+            card.setAttribute('aria-hidden', 'true');
+          }
+        });
+      });
+
+      shuffleBtn.addEventListener('click', () => {
+        const cards = Array.from(grid.children);
+        for (let i = cards.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          grid.appendChild(cards[j]);
+          cards.splice(j, 1);
+        }
+      });
+    })();
+
+    // --- Gallery modal (accessible) ---
+    (function(){
+      const modal = document.getElementById('gallery-modal');
+      const modalImg = document.getElementById('modal-image');
+      const closeBtn = document.getElementById('modal-close');
+      const prevBtn = document.getElementById('modal-prev');
+      const nextBtn = document.getElementById('modal-next');
+      let images = [];
+      let idx = 0;
+      let lastFocused = null;
+
+      function openModal(imgArray, start = 0){
+        images = imgArray;
+        idx = start;
+        modalImg.src = images[idx];
+        modalImg.alt = `Gallery image ${idx + 1} of ${images.length}`;
+        modal.style.display = 'flex';
+        modal.setAttribute('aria-hidden', 'false');
+        lastFocused = document.activeElement;
+        closeBtn.focus();
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal(){
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+        modalImg.src = '';
+        if (lastFocused) lastFocused.focus();
+        document.body.style.overflow = '';
+      }
+
+      function showIndex(i){
+        idx = (i + images.length) % images.length;
+        modalImg.src = images[idx];
+        modalImg.alt = `Gallery image ${idx + 1} of ${images.length}`;
+      }
+
+      // open gallery when clicking card buttons
+      document.querySelectorAll('.view-gallery-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const json = btn.getAttribute('data-images');
+          try {
+            const arr = JSON.parse(json);
+            openModal(arr, 0);
+          } catch(err){
+            console.error('Invalid image data', err);
+          }
+        });
+      });
+
+      // modal controls
+      closeBtn.addEventListener('click', closeModal);
+      prevBtn.addEventListener('click', () => showIndex(idx - 1));
+      nextBtn.addEventListener('click', () => showIndex(idx + 1));
+
+      // keyboard support
+      document.addEventListener('keydown', (e) => {
+        if (modal.getAttribute('aria-hidden') === 'false') {
+          if (e.key === 'Escape') closeModal();
+          if (e.key === 'ArrowLeft') showIndex(idx - 1);
+          if (e.key === 'ArrowRight') showIndex(idx + 1);
+        }
+      });
+
+      // click outside to close
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+    })();
+
+    // --- Small polish: accessible focus styles for hobby cards ---
+    document.querySelectorAll('.hobby-card').forEach(card => {
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          // focus first action button in the card or the first link
+          const act = card.querySelector('button, a');
+          if (act) act.focus();
+          e.preventDefault();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

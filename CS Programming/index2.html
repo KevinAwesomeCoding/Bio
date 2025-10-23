@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Cozy Corner</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        .sticky-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .section {
+            min-height: 100vh;
+            padding: 80px 20px;
+            scroll-margin-top: 80px;
+            background: linear-gradient(135deg, var(--warm-beige), var(--soft-pink));
+        }
+
+        .active-nav {
+            background-color: var(--dusty-rose) !important;
+            color: white !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sticky Navigation -->
+    <nav class="sticky-nav">
+        <a href="#home" class="nav-tab active-nav">Home</a>
+        <a href="#hobbies" class="nav-tab">Hobbies</a>
+        <a href="#discover" class="nav-tab">Discover</a>
+        <a href="#resume" class="nav-tab">Resume</a>
+        <a href="#career" class="nav-tab">Career</a>
+        <a href="#game" class="nav-tab">Game</a>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section welcome-section">
+        <span class="decoration">🌸</span>
+        <span class="decoration">🍰</span>
+        <span class="decoration">🌿</span>
+        <span class="decoration">☕</span>
+        
+        <div class="welcome-content">
+            <h1 class="welcome-title">Welcome to My World</h1>
+            <p class="subtitle">A Warm & Gentle Space</p>
+            
+            <p class="description">
+                Step into a world of warmth and comfort. Here, you'll find a peaceful retreat 
+                filled with soft colors, gentle thoughts, and cozy moments. Make yourself at home 
+                and stay awhile.
+            </p>
+
+            <div class="buttons">
+                <a href="#hobbies" class="cute-button">Explore More</a>
+                <a href="#discover" class="cute-button">Discover</a>
+            </div>
+
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <div class="card-icon">🌺</div>
+                    <h3 class="card-title">Gentle Thoughts</h3>
+                    <p>Share in the simple joys and peaceful moments of everyday life</p>
+                </div>
+                <div class="feature-card">
+                    <div class="card-icon">🫖</div>
+                    <h3 class="card-title">Cozy Stories</h3>
+                    <p>Discover heartwarming tales and comforting conversations</p>
+                </div>
+                <div class="feature-card">
+                    <div class="card-icon">🍪</div>
+                    <h3 class="card-title">Sweet Moments</h3>
+                    <p>Create precious memories in this warm and welcoming space</p>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hobbies Section -->
+    <section id="hobbies" class="section about-me-section">
+        <div class="container">
+            <h1 class="welcome-title">My Hobbies</h1>
+            <p class="subtitle">Things I Love to Do</p>
+            
+            <table class="about-table">
+                <tr>
+                    <th colspan="2">My Favorite Activities</th>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-palette about-icon"></i>Art & Crafts</td>
+                    <td>Drawing, painting, and DIY projects</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-book about-icon"></i>Reading</td>
+                    <td>Fantasy novels and self-improvement books</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-music about-icon"></i>Music</td>
+                    <td>Playing piano and listening to indie music</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-camera about-icon"></i>Photography</td>
+                    <td>Nature and street photography</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <!-- Discover Section -->
+    <section id="discover" class="section">
+        <div class="container">
+            <h1 class="welcome-title">Discover</h1>
+            <p class="subtitle">Explore My World</p>
+            
+            <div class="discover-grid">
+                <div class="discover-card">
+                    <i class="fas fa-camera"></i>
+                    <h3>Photography</h3>
+                    <p>Capturing life's beautiful moments</p>
+                </div>
+                <div class="discover-card">
+                    <i class="fas fa-palette"></i>
+                    <h3>Artwork</h3>
+                    <p>Creating and sharing artistic expressions</p>
+                </div>
+                <div class="discover-card">
+                    <i class="fas fa-book"></i>
+                    <h3>Stories</h3>
+                    <p>Adventures through reading and writing</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="section">
+        <div class="container">
+            <h1 class="welcome-title">Resume</h1>
+            <p class="subtitle">My Professional Journey</p>
+            
+            <div class="resume-content">
+                <section class="resume-section">
+                    <h2>Education</h2>
+                    <div class="education-entry">
+                        <h3>University Name</h3>
+                        <p>Degree Program</p>
+                        <p>Year - Present</p>
+                    </div>
+                </section>
+                
+                <section class="resume-section">
+                    <h2>Experience</h2>
+                    <div class="experience-entry">
+                        <h3>Position Title</h3>
+                        <p>Company Name</p>
+                        <p>Duration</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Interest Section -->
+    <section id="career" class="section">
+        <div class="container">
+            <h1 class="welcome-title">Career Interests</h1>
+            <p class="subtitle">My Professional Aspirations</p>
+            
+            <div class="career-cards">
+                <div class="career-card">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Career Goal</h3>
+                    <p>Description of your career goals</p>
+                </div>
+                <div class="career-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Growth Path</h3>
+                    <p>Your professional development plan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Section -->
+    <section id="game" class="section">
+        <div class="container">
+            <h1 class="welcome-title">Fun & Games</h1>
+            <p class="subtitle">Let's Play Together!</p>
+            
+            <div class="game-container">
+                <div class="game-area">
+                    <h2>Memory Card Game</h2>
+                    <p>Coming Soon! A fun memory game to test your skills.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Add smooth scroll behavior and update active navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Update active navigation tab
+                document.querySelectorAll('.nav-tab').forEach(tab => {
+                    tab.classList.remove('active-nav');
+                });
+                this.classList.add('active-nav');
+            });
+        });
+
+        // Update active navigation on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 180) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.classList.remove('active-nav');
+                if (tab.getAttribute('href').substring(1) === current) {
+                    tab.classList.add('active-nav');
+                }
+            });
+        });
+
+        // Add hover effect to decorative elements
+        document.querySelectorAll('.decoration').forEach(element => {
+            element.addEventListener('mouseover', function() {
+                this.style.transform = 'scale(1.2) rotate(10deg)';
+            });
+            element.addEventListener('mouseout', function() {
+                this.style.transform = 'scale(1) rotate(0deg)';
+            });
+        });
+
+        // Add hover effects to cards and elements
+        document.querySelectorAll('.feature-card, .discover-card, .career-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
+</body>
+</html>YPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome | Interactive Homepage</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e5c0ed;
+            --text-color: #07090a;
+            --background: #be91c6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: var(--background);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(135deg, #6c5ce7, #a8e6cf);
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            transform: translateY(0);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: titleGradient 8s ease infinite;
+        }
+
+        @keyframes titleGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .welcome-text {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: white;
+            background: var(--accent-color);
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+            margin: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
+        }
+
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0;
+            transition: transform 0.6s, opacity 0.3s;
+        }
+
+        .cta-button:active::after {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            cursor: pointer;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .welcome-text { font-size: 1.2rem; }
+            .features { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Welcome to My World</h1>
+            <p class="welcome-text">Discover amazing experiences and creative ideas</p>
+            <div class="cta-section">
+                <a href="#" class="cta-button" id="exploreBtn">Explore More</a>
+                <a href="#" class="cta-button" id="contactBtn">Get in Touch</a>
+            </div>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>Innovation</h3>
+                    <p>Pushing boundaries with creative solutions</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Excellence</h3>
+                    <p>Delivering quality in every detail</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Vision</h3>
+                    <p>Shaping the future of technology</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Interactive elements
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const ripple = document.createElement('div');
+                ripple.classList.add('ripple');
+                button.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 1000);
+            });
+        });
+
+        // Dynamic color scheme based on time of day
+        function updateColorScheme() {
+            const hour = new Date().getHours();
+            const root = document.documentElement;
+            
+            if (hour >= 6 && hour < 12) { // Morning
+                root.style.setProperty('--background', '#e8f3f7');
+                root.style.setProperty('--accent-color', '#ff7e67');
+            } else if (hour >= 12 && hour < 18) { // Afternoon
+                root.style.setProperty('--background', '#ecf0f1');
+                root.style.setProperty('--accent-color', '#3498db');
+            } else { // Evening/Night
+                root.style.setProperty('--background', '#2c3e50');
+                root.style.setProperty('--text-color', '#ecf0f1');
+                root.style.setProperty('--accent-color', '#a8e6cf');
+            }
+        }
+
+        updateColorScheme();
+        setInterval(updateColorScheme, 1000 * 60 * 30); // Update every 30 minutes
+
+        // Feature card interactions
+        document.querySelectorAll('.feature-card').forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.2}s`;
+            
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px) scale(1.05)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Welcome message typing effect
+        const welcomeText = document.querySelector('.welcome-text');
+        const text = welcomeText.textContent;
+        welcomeText.textContent = '';
+        let i = 0;
+
+        function typeWriter() {
+            if (i < text.length) {
+                welcomeText.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 50);
+            }
+        }
+
+        // Start typing effect when page loads
+        window.addEventListener('load', typeWriter);
+    </script>
+</body>
+</html>
